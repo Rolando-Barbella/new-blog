@@ -38,7 +38,7 @@ module.exports = {
         // sanityToken: null,
         // sanityWatchMode: true,
         // sanityOverlayDrafts: false, // Requires a token and private dataset
-        sanityProjectId: `pyvaull7`, // Required
+        sanityProjectId: `b8e35v47`, // Required
       },
     },
     {
