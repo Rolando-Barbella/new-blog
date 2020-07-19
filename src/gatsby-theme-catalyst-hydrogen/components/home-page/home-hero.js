@@ -93,7 +93,7 @@ const SiteWelcome = () => {
             }}
           >
             {/* <ButtonPrimary to="/work">Published Work</ButtonPrimary> */}
-            <ButtonSecondary to="/bio">Bio</ButtonSecondary>
+            {/* <ButtonSecondary to="/bio">Bio</ButtonSecondary> */}
           </div>
         </div>
 

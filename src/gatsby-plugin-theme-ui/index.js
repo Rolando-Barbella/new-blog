@@ -1,8 +1,12 @@
 import { merge } from "theme-ui"
 import { BaseTheme } from "gatsby-theme-catalyst-core"
 import { baseColors } from "@theme-ui/preset-tailwind"
+import 'typeface-merriweather';
 
 export default merge(BaseTheme, {
+  fonts:{
+    body:'"Merriweather","Georgia",serif'
+  },
   colors: {
     primary: baseColors.red[8],
     secondary: baseColors.red[5],
@@ -45,7 +49,7 @@ export default merge(BaseTheme, {
   },
   variants: {
     siteTitle: {
-      fontSize: [4, null, null, 5, null],
+      fontSize: [3, null, null, 3, null],
       "::after": {
         display: "none",
       },

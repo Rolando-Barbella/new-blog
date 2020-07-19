@@ -24,7 +24,7 @@ const HomeContact = () => {
   const result = data.sanityHomePage
   return (
     <Fragment>
-      <Styled.h2>{result.contactTitle}</Styled.h2>
+      <Styled.h3>{result.contactTitle}</Styled.h3>
       <div
         sx={{
           flex: "2",
