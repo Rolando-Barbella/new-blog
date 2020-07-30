@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui"
 import Img from "gatsby-image"
 import { truncate } from "lodash"
 
-const Card = ({ title, image, publisher, date, link, excerpt }) => {
+const Card = ({ id, title, createdAt, slug,  }) => {
   return (
     <div
       sx={{
@@ -17,18 +17,8 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
         mb: 4,
         borderRadius: 3,
       }}
-      key={title}
+      key={id}
     >
-      <Img
-        sx={{
-          mr: [0, null, 3, null, null],
-          maxWidth: ["100%", null, "250px", null, null],
-          maxHeight: ["250px", null, "100%", null, null],
-          flex: "1",
-        }}
-        fluid={image}
-        alt={title}
-      />
       <div
         sx={{
           mt: [3, null, 0, null, null],
@@ -43,7 +33,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
             m: 0,
           }}
         >
-          {publisher} &middot; {date}
+          {createdAt} &middot; {createdAt}
         </p>
         <Styled.h3
           sx={{
@@ -58,14 +48,14 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
                 textDecoration: "underline",
               },
             }}
-            href={link}
+            href={slug}
             target="_blank"
             rel="noopener noreferrer"
           >
             {title}
           </a>
         </Styled.h3>
-        <p>{truncate(excerpt, { length: 300, separator: " " })}</p>
+        {/* <p>{truncate(excerpt, { length: 300, separator: " " })}</p> */}
         <a
           sx={{
             color: "text",
@@ -79,7 +69,7 @@ const Card = ({ title, image, publisher, date, link, excerpt }) => {
               textDecoration: "underline",
             },
           }}
-          href={link}
+          href={slug}
           target="_blank"
           rel="noopener noreferrer"
         >

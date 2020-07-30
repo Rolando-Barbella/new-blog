@@ -13,33 +13,23 @@ const FeaturedWork = () => {
           workTitle
         }
       }
-      allSanityWork(
-        sort: { order: DESC, fields: date }
-        filter: { featured: { eq: true } }
-      ) {
+      allSanityPage{
         nodes {
           id
           title
-          link
-          publisher
-          date(formatString: "MMMM Do, YYYY")
-          excerpt
-          image {
-            asset {
-              fluid(maxWidth: 720) {
-                ...GatsbySanityImageFluid
-              }
-            }
+          _createdAt
+          slug {
+            current
           }
         }
       }
     }
   `)
-  const writing = data.allSanityWork.nodes
+  const writing = data.allSanityPage.nodes
   const result = data.allSanityHomePage.nodes[0]
   return (
     <Fragment>
-      <Styled.h2>{result.workTitle}</Styled.h2>
+      <Styled.h3>{result.workTitle}</Styled.h3>
       <div
         sx={{
           mt: 4,
@@ -49,11 +39,8 @@ const FeaturedWork = () => {
         {writing.map(published => (
           <Card
             title={published.title}
-            link={published.link}
-            image={published.image.asset.fluid}
-            publisher={published.publisher}
-            date={published.date}
-            excerpt={published.excerpt}
+            createdAt={published._createdAt}
+            slug={published.slug.current}
             key={published.id}
           />
         ))}

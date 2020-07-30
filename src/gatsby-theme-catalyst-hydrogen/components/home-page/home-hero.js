@@ -1,10 +1,7 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
+import { Fragment } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
-// import ButtonPrimary from "gatsby-theme-catalyst-hydrogen/src/components/button-primary"
-import ButtonSecondary from "gatsby-theme-catalyst-hydrogen/src/components/button-secondary"
-import { SanityContent } from "gatsby-theme-catalyst-sanity"
 
 const SiteWelcome = () => {
   const data = useStaticQuery(graphql`
@@ -34,87 +31,26 @@ const SiteWelcome = () => {
       return "auto"
     }
   }
-
   const hero = data.sanityHomePage
   return (
-    <section
-      sx={{
-        width: "100vw",
-        position: "relative",
-        left: "calc(-50vw + 50%)",
-      }}
-    >
+    <Fragment>
+      <Styled.p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum corporis ex animi ipsa quo. Sit iusto neque ipsa necessitatibus! Vero facilis quae labore? Obcaecati nobis quibusdam eius magnam exercitationem fuga.
+      </Styled.p>
       <div
         sx={{
-          gridRow: "1 / -1",
-          gridColumn: "1 / -1",
-          zIndex: "1",
+          mt: 4,
+          mb: 2,
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gridTemplateRows: "auto",
-          gridGap: 3,
-          height: welcomeHeight,
-          backgroundColor: "accent",
-          px: 3,
-          pt: [0, null, null, 5, null],
-          pb: [4, null, null, 5, null],
+          gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))",
+          alignItems: "center",
+          justifyItems: "center",
+          gridGap: ["1rem", null, "2rem", null, null],
         }}
       >
-        <div
-          sx={{
-            gridColumn: ["1 / -1", null, null, "2 / 3", null],
-            gridRow: "1 / 2",
-            alignSelf: "center",
-            justifySelf: "center",
-            zIndex: "5",
-            maxWidth: "maxContentWidth",
-            mx: [0, null, null, 3, null],
-          }}
-        >
-          <h1
-            sx={{
-              fontSize: [5, 6, null, null, null],
-              fontFamily: "alt",
-              fontWeight: "400",
-              fontStyle: "italic",
-            }}
-          >
-            {hero.heroTitle}
-          </h1>
-          <div sx={{ mt: 0, mb: 4 }}>
-            <SanityContent data={hero._rawHeroText} />
-          </div>
-          <div
-            sx={{
-              display: "grid",
-              gridGap: [3, 4, null, null, null],
-              gridTemplateColumns: ["auto", "auto auto 1fr", null, null, null],
-              justifyItems: ["stretch", "start", null, null, null],
-            }}
-          >
-            {/* <ButtonPrimary to="/work">Published Work</ButtonPrimary> */}
-            {/* <ButtonSecondary to="/bio">Bio</ButtonSecondary> */}
-          </div>
-        </div>
-
-        <Img
-          sx={{
-            gridColumn: ["1 / -1", null, null, "1 / 2", null],
-            gridRow: "1 / 2",
-            alignSelf: "center",
-            height: "100%",
-            width: "auto",
-            zIndex: 1,
-            opacity: ["0.2", null, null, "1", null],
-            maxHeight: ["auto", "80vh", "70vh", "70vh", null],
-          }}
-          fluid={hero.heroImage.asset.fluid}
-          alt="Person with shapes and colors from head"
-          imgStyle={{ objectFit: "contain" }}
-          loading="eager"
-        />
+        
       </div>
-    </section>
+    </Fragment>
   )
 }
 
