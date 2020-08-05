@@ -39,7 +39,7 @@ const FeaturedWork = () => {
         {writing.map(published => (
           <Card
             title={published.title}
-            createdAt={published._createdAt}
+            createdAt={published._createdAt.slice(0,10)}
             slug={published.slug.current}
             key={published.id}
           />

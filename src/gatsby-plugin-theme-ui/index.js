@@ -8,7 +8,7 @@ export default merge(BaseTheme, {
     body:'"Merriweather","Georgia",serif'
   },
   colors: {
-    primary: baseColors.red[8],
+    primary: baseColors.green[3],
     secondary: baseColors.red[5],
     accent: baseColors.gray[2],
     header: {

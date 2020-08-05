@@ -1,7 +1,5 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
-import Img from "gatsby-image"
-import { truncate } from "lodash"
 
 const Card = ({ id, title, createdAt, slug,  }) => {
   return (
@@ -25,16 +23,6 @@ const Card = ({ id, title, createdAt, slug,  }) => {
           flex: "2",
         }}
       >
-        <p
-          sx={{
-            fontSize: "60%",
-            textTransform: "uppercase",
-            letterSpacing: "wider",
-            m: 0,
-          }}
-        >
-          {createdAt} &middot; {createdAt}
-        </p>
         <Styled.h3
           sx={{
             mt: 0,
@@ -55,7 +43,6 @@ const Card = ({ id, title, createdAt, slug,  }) => {
             {title}
           </a>
         </Styled.h3>
-        {/* <p>{truncate(excerpt, { length: 300, separator: " " })}</p> */}
         <a
           sx={{
             color: "text",
@@ -75,6 +62,16 @@ const Card = ({ id, title, createdAt, slug,  }) => {
         >
           Read it
         </a>
+        <p
+          sx={{
+            fontSize: "60%",
+            textTransform: "uppercase",
+            letterSpacing: "wider",
+            m: 0,
+          }}
+        >
+         {createdAt}
+        </p>
       </div>
     </div>
   )
