@@ -1,25 +1,8 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { Fragment } from "react"
-import { graphql, useStaticQuery } from "gatsby"
 
 const SiteWelcome = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      sanityHomePage {
-        heroTitle
-        _rawHeroText
-        heroImage {
-          asset {
-            fluid(maxWidth: 1024) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
-    }
-  `)
-
   const welcomeHeight = () => {
     if (
       typeof window !== "undefined" &&
@@ -31,11 +14,10 @@ const SiteWelcome = () => {
       return "auto"
     }
   }
-  const hero = data.sanityHomePage
   return (
     <Fragment>
       <Styled.p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum corporis ex animi ipsa quo. Sit iusto neque ipsa necessitatibus! Vero facilis quae labore? Obcaecati nobis quibusdam eius magnam exercitationem fuga.
+        My name Rolando, I am a Developer, UI consultant living in Europe. Texting and streaming in Spanish and English about web development mostly. I help companies become more succesfull by building products ( small or large )
       </Styled.p>
       <div
         sx={{
@@ -48,7 +30,6 @@ const SiteWelcome = () => {
           gridGap: ["1rem", null, "2rem", null, null],
         }}
       >
-        
       </div>
     </Fragment>
   )

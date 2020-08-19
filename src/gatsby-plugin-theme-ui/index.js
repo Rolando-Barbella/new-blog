@@ -8,11 +8,11 @@ export default merge(BaseTheme, {
     body:'"Merriweather","Georgia",serif'
   },
   colors: {
-    primary: baseColors.green[3],
+    primary: baseColors.gray[4],
     secondary: baseColors.red[5],
     accent: baseColors.gray[2],
     header: {
-      background: "transparent",
+      background: baseColors.gray[2],
       backgroundOpen: baseColors.red[1],
       text: baseColors.gray[8],
       textOpen: baseColors.gray[8],
@@ -34,7 +34,7 @@ export default merge(BaseTheme, {
       lineHeight: "heading",
       m: 0,
       mb: 4,
-      fontSize: 6,
+      fontSize: 5,
       mt: 4,
       "::after": {
         display: "block",
@@ -42,37 +42,55 @@ export default merge(BaseTheme, {
         width: ["25%", "20%", "15%", null, "10%"],
         pt: 2,
         borderBottomStyle: "solid",
-        borderBottomWidth: "4px",
-        borderBottomColor: "primary",
+        borderBottomWidth: "1px",
+        borderBottomColor: "salmon",
       },
     },
+    a: {
+      color: baseColors.gray[8],
+      "::hover": {
+        textDecoration: "none"
+      }
+    }
   },
   variants: {
+    header: {
+      padding: "0.5rem"
+    },
     siteTitle: {
       fontSize: [3, null, null, 3, null],
       "::after": {
         display: "none",
       },
     },
+    footer: {
+      padding: "1.5rem",
+      fontSize: [1, null, null, 1, null],
+      textDecoration: "none",
+    },
     navLink: {
+      fontSize: 2,
       "::after": {
         position: "absolute",
         top: "100%",
         left: "0",
         width: "100%",
         height: "1px",
-        backgroundColor: "primary",
+        backgroundColor: "salmon",
         content: "''",
         opacity: "0",
         transition: "height 0.3s, opacity 0.3s, transform 0.3s",
         transform: "translateY(-6px)",
       },
-      ":hover, :focus, :active": {
+      ":hover, :focus": {
         textDecoration: "none",
+        color: baseColors.gray[9],
+      },
+      ":active": {
+        color: baseColors.gray[10],
       },
       ":hover::after, :active::after, :focus::after": {
-        height: "4px",
-        opacity: "1",
+        height: "1px",
         transform: "translateY(0px)",
       },
     },
@@ -83,11 +101,12 @@ export default merge(BaseTheme, {
         top: "100%",
         left: "0",
         width: "100%",
-        height: "4px",
-        backgroundColor: "primary",
+        height: "1px",
+        backgroundColor: baseColors.gray[10],
         content: "''",
         opacity: "1",
         transform: "translateY(0px)",
+        backgroundColor: "salmon",
       },
     },
     navLinkSub: {
@@ -97,13 +116,16 @@ export default merge(BaseTheme, {
       ":hover::after": {
         content: "none",
       },
-      ":hover, :focus, :active": {
-        color: "primary",
+      ":hover, :focus": {
+        color: baseColors.gray[10],
       },
+      ":active": {
+        color: baseColors.gray[10],
+      }
     },
     navLinkSubActive: {
       textDecoration: "none",
-      color: "primary",
+      color: baseColors.gray[7],
       "::after": {
         content: "none",
       },

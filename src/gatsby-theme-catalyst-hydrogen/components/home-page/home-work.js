@@ -1,9 +1,9 @@
 /** @jsx jsx */
+import React from "react"
 import { jsx, Styled } from "theme-ui"
-import { Fragment } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Card from "./home-card"
-// import ButtonSecondary from "../button-secondary"
+import { Fragment } from "react"
 
 const FeaturedWork = () => {
   const data = useStaticQuery(graphql`
@@ -13,48 +13,61 @@ const FeaturedWork = () => {
           workTitle
         }
       }
-      allSanityPage{
-        nodes {
-          id
-          title
-          _createdAt
-          slug {
-            current
+      allSanityWork(sort: {order: ASC, fields: _id}, limit: 10) {
+        edges {
+          next {
+            date
+            title
+            categories {
+              title
+            }
+          }
+          node {
+            _createdAt(formatString: "")
+            slug {
+              current
+            }
+            date(formatString: "")
+            title
+            _id
           }
         }
       }
     }
-  `)
-  const writing = data.allSanityPage.nodes
+  `);
+
+  const lastPosts = data.allSanityWork.edges
   const result = data.allSanityHomePage.nodes[0]
   return (
-    <Fragment>
+    <>
       <Styled.h3>{result.workTitle}</Styled.h3>
       <div
         sx={{
           mt: 4,
-          mb: 5,
         }}
       >
-        {writing.map(published => (
-          <Card
-            title={published.title}
-            createdAt={published._createdAt.slice(0,10)}
-            slug={published.slug.current}
-            key={published.id}
-          />
-        ))}
-        <div
-          sx={{
-            display: "grid",
-            justifyItems: ["stretch", "start", null, null, null],
-          }}
-        >
-          {/* <ButtonSecondary to="/work">More Published Work</ButtonSecondary> */}
-        </div>
+        {lastPosts.map(published => (
+          <Fragment key={published.node._id}>
+            <Card
+              title={published.node.title}
+              createdAt={published.node.date}
+              slug={published.node.slug.current}
+            />
+            <div
+              sx={{
+                display: "grid",
+                justifyItems: ["stretch", "start", null, null, null],
+              }}
+            >
+            </div>
+          </Fragment>
+        ))
+        }
       </div>
-    </Fragment>
+    </>
   )
 }
 
 export default FeaturedWork
+
+// {/* <ButtonSecondary to="/work">More Published Work</ButtonSecondary> */ }

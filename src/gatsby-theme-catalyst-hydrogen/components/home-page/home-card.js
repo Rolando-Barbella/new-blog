@@ -10,7 +10,7 @@ const Card = ({ id, title, createdAt, slug,  }) => {
         width: ["100vw", "auto", null, null, null],
         position: ["relative", "static", null, null, null],
         left: ["calc(-50vw + 50%)", "auto", null, null, null],
-        backgroundColor: "accent",
+        backgroundColor: "salmon",
         p: 3,
         mb: 4,
         borderRadius: 3,
@@ -30,14 +30,14 @@ const Card = ({ id, title, createdAt, slug,  }) => {
         >
           <a
             sx={{
-              color: "text",
+              color: "white",
               textDecoration: "none",
+              fontWeight: "400",
               ":hover": {
-                textDecoration: "underline",
+                color:"#4c4c4c"
               },
             }}
             href={slug}
-            target="_blank"
             rel="noopener noreferrer"
           >
             {title}
