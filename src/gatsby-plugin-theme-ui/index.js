@@ -5,7 +5,9 @@ import 'typeface-merriweather';
 
 export default merge(BaseTheme, {
   fonts:{
-    body:'"Merriweather","Georgia",serif'
+    body:
+    'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+
   },
   colors: {
     primary: baseColors.gray[4],

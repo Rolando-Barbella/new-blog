@@ -16,8 +16,11 @@ const SiteWelcome = () => {
   }
   return (
     <Fragment>
+      <Styled.h2>Hola Amigos</Styled.h2>
       <Styled.p>
-        My name Rolando, I am a Developer, UI consultant living in Europe. Texting and streaming in Spanish and English about web development mostly. I help companies become more succesfull by building products ( small or large )
+        My name Rolando, I am a Developer, UI consultant living in Europe. 
+        Bloging and making videos in Spanish and English about web development mostly, 
+        I help companies become more succesfull by building quality products.
       </Styled.p>
       <div
         sx={{
@@ -29,8 +32,7 @@ const SiteWelcome = () => {
           justifyItems: "center",
           gridGap: ["1rem", null, "2rem", null, null],
         }}
-      >
-      </div>
+      />
     </Fragment>
   )
 }
