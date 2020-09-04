@@ -16,10 +16,10 @@ const SiteWelcome = () => {
   }
   return (
     <Fragment>
-      <Styled.h2>Hola Amigos</Styled.h2>
+      <Styled.h2>Hola!</Styled.h2>
       <Styled.p>
-        My name Rolando, I am a Developer, UI consultant living in Europe. 
-        Bloging and making videos in Spanish and English about web development mostly, 
+        My name is Rolando, I'm a developer, UI consultant based in Europe. 
+        Bloging, making videos in Spanish and English about web development mostly, 
         I help companies become more succesfull by building quality products.
       </Styled.p>
       <div

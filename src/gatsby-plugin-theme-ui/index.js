@@ -7,7 +7,6 @@ export default merge(BaseTheme, {
   fonts:{
     body:
     'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
-
   },
   colors: {
     primary: baseColors.gray[4],
@@ -57,10 +56,10 @@ export default merge(BaseTheme, {
   },
   variants: {
     header: {
-      padding: "0.5rem"
+      padding: "0.5rem",
     },
     siteTitle: {
-      fontSize: [3, null, null, 3, null],
+      fontSize: [2, null, null, 2, null],
       "::after": {
         display: "none",
       },
@@ -71,7 +70,7 @@ export default merge(BaseTheme, {
       textDecoration: "none",
     },
     navLink: {
-      fontSize: 2,
+      fontSize: 1,
       "::after": {
         position: "absolute",
         top: "100%",
@@ -87,6 +86,9 @@ export default merge(BaseTheme, {
       ":hover, :focus": {
         textDecoration: "none",
         color: baseColors.gray[9],
+        borderBottomStyle: "solid",
+        borderBottomWidth: "1px",
+        borderBottomColor: "salmon",
       },
       ":active": {
         color: baseColors.gray[10],
