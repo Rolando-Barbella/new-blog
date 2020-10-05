@@ -38,6 +38,7 @@ const FeaturedWork = () => {
 
   const lastPosts = data.allSanityWork.edges
   const result = data.allSanityHomePage.nodes[0]
+  // lastPosts[0].next.categories[0].title
   return (
     <>
       <Styled.h3>{result.workTitle}</Styled.h3>

@@ -26,3 +26,7 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 
 ## Component Shadowing
 node_module > gatsby-theme-catalyst-hydrogen > sr > components > home-page
+
+## GraphQL
+
+http://localhost:8000/___graphql?query=%0A&operationName=MyQuery

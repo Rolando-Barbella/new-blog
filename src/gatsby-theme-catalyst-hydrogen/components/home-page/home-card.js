@@ -23,7 +23,7 @@ const Card = ({ id, title, createdAt, slug,  }) => {
           flex: "2",
         }}
       >
-        <Styled.h3
+        <Styled.h4
           sx={{
             mt: 0,
           }}
@@ -42,7 +42,7 @@ const Card = ({ id, title, createdAt, slug,  }) => {
           >
             {title}
           </a>
-        </Styled.h3>
+        </Styled.h4>
         <a
           sx={{
             color: "text",
