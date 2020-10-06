@@ -1,7 +1,8 @@
 /** @jsx jsx */
+import React from "react"
 import { jsx, Styled } from "theme-ui"
 
-const Card = ({ id, title, createdAt, slug,  }) => {
+const Card = ({ id, title, createdAt, slug, category }) => {
   return (
     <div
       sx={{
@@ -10,7 +11,8 @@ const Card = ({ id, title, createdAt, slug,  }) => {
         width: ["100vw", "auto", null, null, null],
         position: ["relative", "static", null, null, null],
         left: ["calc(-50vw + 50%)", "auto", null, null, null],
-        backgroundColor: "salmon",
+        backgroundColor: category === "JAMstack" ? "salmon": "#736CED",
+        boxShadow: ["6px 12px 16px -13px rgba(0,0,0,0.38)"],  
         p: 3,
         mb: 4,
         borderRadius: 3,
@@ -34,7 +36,7 @@ const Card = ({ id, title, createdAt, slug,  }) => {
               textDecoration: "none",
               fontWeight: "400",
               ":hover": {
-                color:"#4c4c4c"
+                color: "#4c4c4c"
               },
             }}
             href={slug}
@@ -62,16 +64,27 @@ const Card = ({ id, title, createdAt, slug,  }) => {
         >
           Read it
         </a>
-        <p
-          sx={{
-            fontSize: "60%",
-            textTransform: "uppercase",
-            letterSpacing: "wider",
-            m: 0,
-          }}
-        >
-         {createdAt}
-        </p>
+        <>
+          <p
+            sx={{
+              fontSize: "60%",
+              letterSpacing: "wider",
+              m: 0,
+            }}
+          >
+            {category}
+          </p>
+          <p
+            sx={{
+              fontSize: "60%",
+              textTransform: "uppercase",
+              letterSpacing: "wider",
+              m: 0,
+            }}
+          >
+            {createdAt}
+          </p>
+        </>
       </div>
     </div>
   )

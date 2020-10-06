@@ -15,13 +15,6 @@ const FeaturedWork = () => {
       }
       allSanityWork(sort: {order: ASC, fields: _id}, limit: 10) {
         edges {
-          next {
-            date
-            title
-            categories {
-              title
-            }
-          }
           node {
             _createdAt(formatString: "")
             slug {
@@ -30,6 +23,9 @@ const FeaturedWork = () => {
             date(formatString: "")
             title
             _id
+            categories {
+              title
+            }
           }
         }
       }
@@ -37,33 +33,34 @@ const FeaturedWork = () => {
   `);
 
   const lastPosts = data.allSanityWork.edges
-  const result = data.allSanityHomePage.nodes[0]
-  // lastPosts[0].next.categories[0].title
+  const lastPublications = data.allSanityHomePage.nodes[0]
   return (
     <>
-      <Styled.h3>{result.workTitle}</Styled.h3>
+      <Styled.h3>{lastPublications.workTitle}</Styled.h3>
       <div
         sx={{
           mt: 4,
         }}
       >
-        {lastPosts.map(published => (
-          <Fragment key={published.node._id}>
-            <Card
-              title={published.node.title}
-              createdAt={published.node.date}
-              slug={published.node.slug.current}
-            />
-            <div
-              sx={{
-                display: "grid",
-                justifyItems: ["stretch", "start", null, null, null],
-              }}
-            >
-            </div>
-          </Fragment>
-        ))
-        }
+        {lastPosts.map(published => {
+          return (
+            <Fragment key={published.node._id}>
+              <Card
+                title={published.node.title}
+                createdAt={published.node.date}
+                slug={published.node.slug.current}
+                category={published.node.categories[0].title}
+              />
+              <div
+                sx={{
+                  display: "grid",
+                  justifyItems: ["stretch", "start", null, null, null],
+                }}
+              >
+              </div>
+            </Fragment>
+          )
+        })}
       </div>
     </>
   )
