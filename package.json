@@ -6,6 +6,7 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby": "^2.21.21",
+    "gatsby-plugin-canonical-urls": "^2.3.13",
     "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-theme-catalyst-hydrogen": "^1.2.3",
     "react": "^16.13.1",
