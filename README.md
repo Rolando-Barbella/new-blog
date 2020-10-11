@@ -6,18 +6,7 @@ This is a full-featured starter that ties together the core theme, header and fo
 
 [Read the docs on Github](https://github.com/ehowey/gatsby-theme-catalyst)
 
-**Catalyzing Start**
-
-```sh
-# create a new Gatsby site using the catalyst writer starter site
-gatsby new catalyst-hydrogen https://github.com/ehowey/gatsby-starter-catalyst-hydrogen
-```
-
 [Read the Gatsby Quick Start Guide](https://www.gatsbyjs.org/docs/quick-start)
-
-**Demo**
-
-[https://gatsby-starter-catalyst-hydrogen.netlify.app/](https://gatsby-starter-catalyst-hydrogen.netlify.app/)
 
 ## About Gatsby Theme Catalyst
 
@@ -27,6 +16,13 @@ The Catalyst series of themes and starters for [GatsbyJS](https://www.gatsbyjs.o
 ## Component Shadowing
 node_module > gatsby-theme-catalyst-hydrogen > sr > components > home-page
 
-## GraphQL
+## GraphQL URL
 
 http://localhost:8000/___graphql?query=%0A&operationName=MyQuery
+
+## Adding a new post
+
+- Go to: Content > Work > List of Work
+- Add the page, the slug syntax is: posts/category-name/name-of-the-page
+- Go to: Other Pages > Pages and add the new page
+- Add the page slug is: posts/category-name/name-of-the-page
