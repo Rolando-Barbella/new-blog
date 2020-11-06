@@ -23,6 +23,8 @@ http://localhost:8000/___graphql?query=%0A&operationName=MyQuery
 ## Adding a new post
 
 - Go to: Content > Work > List of Work
-- Add the page, the slug syntax is: posts/category-name/name-of-the-page
-- Go to: Other Pages > Pages and add the new page
+- Add the page, the slug syntax should be: posts/category-name/name-of-the-page
+- Go to: Content > Other Pages > Pages and add the new page
 - Add the page slug is: posts/category-name/name-of-the-page
+- Go to the post page, example (Aprende JAMstack)
+- 

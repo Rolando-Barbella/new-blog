@@ -3,6 +3,16 @@ import React from "react"
 import { jsx, Styled } from "theme-ui"
 
 const Card = ({ id, title, createdAt, slug, category }) => {
+  let categoryColor = (category) => {
+    switch (category) {
+      case "Desarrollo profesional":
+        return "#736CED"
+      case "JAMstack":
+        return "salmon"    
+      default:
+        return "#54C3C5"
+    }
+  }
   return (
     <div
       sx={{
@@ -11,7 +21,7 @@ const Card = ({ id, title, createdAt, slug, category }) => {
         width: ["100vw", "auto", null, null, null],
         position: ["relative", "static", null, null, null],
         left: ["calc(-50vw + 50%)", "auto", null, null, null],
-        backgroundColor: category === "JAMstack" ? "salmon": "#736CED",
+        backgroundColor: "#191919",
         boxShadow: ["6px 12px 16px -13px rgba(0,0,0,0.38)"],  
         p: 3,
         mb: 4,
@@ -35,9 +45,6 @@ const Card = ({ id, title, createdAt, slug, category }) => {
               color: "white",
               textDecoration: "none",
               fontWeight: "400",
-              ":hover": {
-                color: "#4c4c4c"
-              },
             }}
             href={slug}
             rel="noopener noreferrer"
@@ -47,7 +54,7 @@ const Card = ({ id, title, createdAt, slug, category }) => {
         </Styled.h4>
         <a
           sx={{
-            color: "text",
+            color: "#39A2F2",
             textDecoration: "none",
             fontWeight: "bold",
             fontSize: "90%",
@@ -59,7 +66,6 @@ const Card = ({ id, title, createdAt, slug, category }) => {
             },
           }}
           href={slug}
-          target="_blank"
           rel="noopener noreferrer"
         >
           Read it
@@ -67,6 +73,7 @@ const Card = ({ id, title, createdAt, slug, category }) => {
         <>
           <p
             sx={{
+              color:"#ccc",
               fontSize: "60%",
               letterSpacing: "wider",
               m: 0,
@@ -76,6 +83,7 @@ const Card = ({ id, title, createdAt, slug, category }) => {
           </p>
           <p
             sx={{
+              color:"#ccc",
               fontSize: "60%",
               textTransform: "uppercase",
               letterSpacing: "wider",

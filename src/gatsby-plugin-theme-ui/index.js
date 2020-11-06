@@ -6,7 +6,7 @@ import 'typeface-merriweather';
 export default merge(BaseTheme, {
   fonts:{
     body:
-    'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+    'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue","Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
   },
   colors: {
     primary: baseColors.gray[4],
@@ -57,6 +57,7 @@ export default merge(BaseTheme, {
   variants: {
     header: {
       padding: "0.5rem",
+      boxShadow: "0 2px 2px 0 rgba(0,0,0,.07)",
     },
     siteTitle: {
       fontSize: [2, null, null, 2, null],

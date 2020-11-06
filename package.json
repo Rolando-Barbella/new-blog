@@ -6,10 +6,11 @@
   "author": "Eric Howey <eric@erichowey.dev>",
   "dependencies": {
     "gatsby": "^2.21.21",
+    "gatsby-cli": "^2.12.117",
     "gatsby-plugin-canonical-urls": "^2.3.13",
     "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-theme-catalyst-hydrogen": "^1.2.3",
-    "react": "^16.13.1",
+    "react": "^17.0.1",
     "react-dom": "^16.13.1",
     "typeface-merriweather": "^0.0.72",
     "typeface-raleway": "^0.0.75"
